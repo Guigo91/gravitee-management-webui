@@ -134,7 +134,7 @@ class ApiHealthCheckController {
           _.forEach(values, value => {
             _.forEach(value.buckets, bucket => {
               if (bucket) {
-                // tslint:disable-next-line:triple-equals
+                // eslint:disable-next-line:triple-equals
                 let responseTimeLine = i == 0;
                 series.push({
                   name: 'Average of ' + (responseTimeLine ? 'response time' : 'availability'), data: bucket.data, color: responseTimeLine ? '#337AB7' : '#5CB85C',

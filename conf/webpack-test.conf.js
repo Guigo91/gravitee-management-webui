@@ -25,12 +25,6 @@ module.exports = {
         ]
       },
       {
-        test: /.ts$/,
-        exclude: /node_modules/,
-        loader: 'tslint-loader',
-        enforce: 'pre'
-      },
-      {
         test: /\.ts$/,
         exclude: /node_modules/,
         loaders: [
@@ -52,9 +46,6 @@ module.exports = {
         resolve: {},
         ts: {
           configFileName: 'tsconfig.json'
-        },
-        tslint: {
-          configuration: require('../tslint.json')
         }
       },
       debug: true

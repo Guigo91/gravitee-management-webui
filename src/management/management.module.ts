@@ -546,7 +546,7 @@ import ngInfiniteScroll = require('ng-infinite-scroll');
 
 (<any>window).CodeMirror = CodeMirror;
 
-// tslint:disable:no-var-requires
+// eslint:disable:no-var-requires
 require('satellizer');
 require('angular-marked');
 require('angular-highlightjs');

@@ -65,7 +65,7 @@ class CorsService {
         if ('*' !== allowOrigin &&
           (allowOrigin.includes('(') || allowOrigin.includes('[') || allowOrigin.includes('*'))) {
           try {
-            // tslint:disable-next-line:no-unused-expression
+            // eslint:disable-next-line:no-unused-expression
             new RegExp(allowOrigin);
           } catch (e) {
             isValid = false;
