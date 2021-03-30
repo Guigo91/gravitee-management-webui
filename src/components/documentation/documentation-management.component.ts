@@ -74,6 +74,7 @@ const DocumentationManagementComponent: ng.IComponentOptions = {
     this.isLink = (type: string): boolean => PageType.LINK === type;
     this.isSwagger = (type: string): boolean => PageType.SWAGGER === type;
     this.isMarkdown = (type: string): boolean => PageType.MARKDOWN === type;
+    this.isPage = (type:string): boolean => this.isMarkdown(type) || this.isSwagger(type);
     this.isMarkdownTemplate = (type: string): boolean => PageType.MARKDOWN_TEMPLATE === type;
 
     this.getFolderSituation = (folderId: string) => {
@@ -161,6 +162,7 @@ const DocumentationManagementComponent: ng.IComponentOptions = {
             parentId: destinationId,
             type: 'LINK',
             published: page.published,
+            hiddenForAnonymous: page.hiddenForAnonymous,
             configuration: {
               resourceType: 'page',
               isFolder: page.type === 'FOLDER',

@@ -160,6 +160,7 @@
                         <th md-column width="76px"></th>
                         <th md-column width="1%" nowrap>Last Update</th>
                         <th md-column width="48px"></th>
+                        <th md-column width="24px"></th>
                     </tr>
                     </thead>
                     <tbody md-body>
@@ -176,6 +177,7 @@
                         <td md-cell width="76px"></td>
                         <td md-cell width="1%"></td>
                         <td md-cell width="48px"></td>
+                        <td md-cell width="24px"></td>
                     </tr>
                     <tr md-row ng-repeat="page in $ctrl.pages">
                         <td md-cell>
@@ -256,6 +258,11 @@
                                         permission permission-only="['environment-documentation-u', 'api-documentation-u']">
                                 <md-tooltip md-direction="top" md-visible="false">Remove</md-tooltip>
                             </ng-md-icon>
+                        </td>
+                        <td md-cell width="24px">
+                          <ng-md-icon ng-if="$ctrl.isPage(page.type)" icon="{{ page.hiddenForAnonymous ? 'lock' : 'public' }}" size="20" style="fill: #cdcdcd;">
+                            <md-tooltip>{{ page.hiddenForAnonymous ? 'PRIVATE' : 'PUBLIC' }}</md-tooltip>
+                          </ng-md-icon>
                         </td>
                     </tr>
                     </tbody>
